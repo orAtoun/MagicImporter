@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-app.listen(8081,'127.0.0.1');
 const dbService = require('./dbService.js');
 const dataBase = new dbService();
 
@@ -23,6 +22,9 @@ function constructJsonResponse(rows){
     })
     return itemsJSON;
 }
+app.get('/test',function (req, res) {
+    res.send("Hey from AMAZON");
+})
 
 
 app.get('/api/items',function (req,res) {
@@ -64,4 +66,5 @@ app.get('/api/getByVideo/:videoID/:second', function (req,res) {
     dataBase.query(quertString, filter).then(rows => {res.send(rows)})
 
 });
+app.listen(8080,() => console.log("server run on port 8080"));
 
