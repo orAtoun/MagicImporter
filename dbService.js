@@ -3,9 +3,9 @@ var mysql = require('mysql');
 class dbService {
     constructor() {
         this.connection = mysql.createConnection({
-            host     : 'localhost',
+            host     : 'ec2-18-221-149-115.us-east-2.compute.amazonaws.com',
             user     : 'root',
-            password : '',
+            password : 'Aa123456',
             database : 'ad'
         });
     }
